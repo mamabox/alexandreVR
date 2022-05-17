@@ -1,0 +1,11 @@
+trialNb,condition,hintLocation,hintDuration,U_1,U_2,U_3,UR_1,UR_2,UR_3,DR_1,DR_1,DR_3,D_1,D_2,D_3,DL_1,DL_2,DL_3,UL_1,UL_2,UL_3
+1,1,UR_1,1000,triangleR,,,squareR,,,diamondR,,,triangleG,,,squareG,,,diamondG,,
+2,1,U_2,1000,,squareR,,,triangleR,,,,triangleG,,diamondR,,,diamondG,,,squareG,
+3,1,DL_2,1000,,,diamondR,,,squareG,,,triangleR,,,diamondG,,squareR,,,,triangleG
+4,1,UL_1,1000,,triangleG,,,,diamondG,,squareG,,,,triangleR,,,diamondR,squareR,,
+5,1,DR_1,1000,,,triangleR,,triangleG,,,squareR,,diamondG,,,squareG,,,,,diamondR
+6,1,D_3,1000,,,triangleG,,triangleR,,diamondR,,squareG,,,squareR,,,,diamondG,,
+7,1,DR_1,1000,,diamondG,,,diamondR,,squareR,,,,triangleG,,,triangleR,,,,squareG
+8,1,U_3,1000,triangleR,,squareR,,,triangleG,,,diamondG,,diamondR,,squareG,,,,,
+9,1,UR_1,1000,,triangleR,,squareR,,,diamondR,,,,,squareG,,diamondG,,,triangleG,
+10,1,D_2,1000,diamondR,,,triangleG,,,,triangleR,,,squareR,,,,,diamondG,squareG,
