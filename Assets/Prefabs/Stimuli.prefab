@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ebd5bea9c9041d7b43117f65a456ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 
   stimuli:
   - {fileID: 2820401929775645431}
   - {fileID: 8611999289353493670}
@@ -117,6 +118,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4784258911430180402, guid: a8b405c360d284a59b2f2791f4b939ff, type: 3}
+      propertyPath: color
+      value: r
+      objectReference: {fileID: 0}
     - target: {fileID: 5833789236092992838, guid: a8b405c360d284a59b2f2791f4b939ff, type: 3}
       propertyPath: color
       value: red
@@ -140,6 +145,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2168356414902145967}
     m_Modifications:
+    - target: {fileID: 2623434426893593770, guid: 4fcae151a73c0456daf69eecf3241018, type: 3}
+      propertyPath: color
+      value: g
+      objectReference: {fileID: 0}
     - target: {fileID: 6593946667769260139, guid: 4fcae151a73c0456daf69eecf3241018, type: 3}
       propertyPath: color
       value: green
@@ -219,10 +228,18 @@ PrefabInstance:
       propertyPath: color
       value: red
       objectReference: {fileID: 0}
+    - target: {fileID: 794556503967481419, guid: eabe3d41f910c426dbd6745eeaae8fc2, type: 3}
+      propertyPath: color
+      value: r
+      objectReference: {fileID: 0}
     - target: {fileID: 4452358448260035457, guid: eabe3d41f910c426dbd6745eeaae8fc2, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4452358448260035458, guid: eabe3d41f910c426dbd6745eeaae8fc2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a4415951725c34d73af1244396ae7041, type: 2}
     - target: {fileID: 4452358448260035459, guid: eabe3d41f910c426dbd6745eeaae8fc2, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -346,6 +363,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4784258911430180402, guid: a8b405c360d284a59b2f2791f4b939ff, type: 3}
+      propertyPath: color
+      value: g
+      objectReference: {fileID: 0}
     - target: {fileID: 5833789236092992838, guid: a8b405c360d284a59b2f2791f4b939ff, type: 3}
       propertyPath: color
       value: green
@@ -369,6 +390,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2168356414902145967}
     m_Modifications:
+    - target: {fileID: -3798431596179049729, guid: 42aabd8277c294d4a837d7bea89f3adc, type: 3}
+      propertyPath: color
+      value: g
+      objectReference: {fileID: 0}
     - target: {fileID: 7984457509622282963, guid: 42aabd8277c294d4a837d7bea89f3adc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -446,6 +471,10 @@ PrefabInstance:
     - target: {fileID: 635825950261973937, guid: eabe3d41f910c426dbd6745eeaae8fc2, type: 3}
       propertyPath: color
       value: green
+      objectReference: {fileID: 0}
+    - target: {fileID: 794556503967481419, guid: eabe3d41f910c426dbd6745eeaae8fc2, type: 3}
+      propertyPath: color
+      value: g
       objectReference: {fileID: 0}
     - target: {fileID: 4452358448260035457, guid: eabe3d41f910c426dbd6745eeaae8fc2, type: 3}
       propertyPath: m_Mesh
@@ -530,6 +559,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2168356414902145967}
     m_Modifications:
+    - target: {fileID: -3798431596179049729, guid: 42aabd8277c294d4a837d7bea89f3adc, type: 3}
+      propertyPath: color
+      value: r
+      objectReference: {fileID: 0}
     - target: {fileID: 7984457509622282963, guid: 42aabd8277c294d4a837d7bea89f3adc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -604,6 +637,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2168356414902145967}
     m_Modifications:
+    - target: {fileID: 2623434426893593770, guid: 4fcae151a73c0456daf69eecf3241018, type: 3}
+      propertyPath: color
+      value: r
+      objectReference: {fileID: 0}
     - target: {fileID: 6593946667769260139, guid: 4fcae151a73c0456daf69eecf3241018, type: 3}
       propertyPath: color
       value: red
