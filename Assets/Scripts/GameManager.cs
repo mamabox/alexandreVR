@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI trialTimeTxt;
     public TextMeshProUGUI lastTrialTxt;
 
-    private int triaNb;
+    private int trialNb;
     private int totalTrialNb;
 
     //Time
@@ -30,18 +30,21 @@ public class GameManager : MonoBehaviour
     public TimeSpan trialTime;
 
     private bool playerChoice;
-
+    public bool openUI;
     public bool sessionStarted;
 
     //Save Data
     string savePath;
+    public string importPath;
+    public TrialsData trialsData;
+    public TextAsset jsonFile;
 
     private void Awake()
     {
        
 
         //totalTrialNb =
-        triaNb = 0;
+        trialNb = 0;
 
         //OpenMenu();
        SetSavePath();
@@ -49,14 +52,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        StartSession();
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateClock();
-        UpdateUI();
+        //UpdateUI();
     }
 
     void StartSession()
@@ -64,19 +67,25 @@ public class GameManager : MonoBehaviour
         Debug.Log("Startsession");
         sessionStarted = true;
         startTime = Time.time;
-        triaNb = 0;
+        trialNb = 0;
+        StartTrial();
     }
 
     private void StartTrial()
     {
+        string _hint = trialsData.trials[trialNb].hintLocation;
+        List<string> _stimuli = trialsData.trials[trialNb].stimuli;
 
+        Debug.Log("SHOW: " + _hint + " (hint)" + " + " + string.Join(",", _stimuli));
+        //stimuliMngr.ShowHintByName();
+        //stimuliMngr.ShowStimulusByName("1_U_triangleR");
     }
 
     private void EndTrial()
     {
 
 
-        if (triaNb < totalTrialNb)
+        if (trialNb < totalTrialNb)
         {
             totalTrialNb++;
             StartTrial();
@@ -86,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void EndSession()
+    public void EndSession()
     {
         Debug.Log("EndSession");
         sessionStarted = false;
@@ -134,11 +143,11 @@ public class GameManager : MonoBehaviour
     {
         totalTimeTxt.text = "Total: " + totalTime.ToString(@"mm\:ss");
         trialTimeTxt.text = "Task: " + trialTime.ToString(@"mm\:ss");
-        taskNbTxt.text = "Trial " + triaNb + " / " + totalTrialNb;
+        taskNbTxt.text = "Trial " + trialNb + " / " + totalTrialNb;
 
     }
 
-    private void OnPlayerInput(bool input)
+    public void OnPlayerInput(bool input)
     {
         playerChoice = input;
         SaveData();

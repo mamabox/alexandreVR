@@ -23,8 +23,8 @@ public class StimuliManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ShowStimuliByName("1_I");
-        ShowStimuliByName("1_U_triangleR");
+        //ShowStimuliByName("1_I");
+        //ShowStimuliByName("1_U_triangleR");
     }
 
     // Update is called once per frame
@@ -80,7 +80,7 @@ public class StimuliManager : MonoBehaviour
     hintsCount = allHints.Count;
     }
 
-private void HideAll()
+public void HideAll()
     {
         foreach (GameObject stimulus in allStimuli)
         {
@@ -92,7 +92,7 @@ private void HideAll()
     {
         for (int index = 0; index < stimuliCount; index ++)
         {
-            if (allStimuli[index].GetComponent<StimulusPrefab>().name == name)
+            if (allStimuli[index].GetComponent<StimulusPrefab>().ID == name)
             {
                 Debug.Log(name + " has index #: " + index);
                 return index;
@@ -102,7 +102,21 @@ private void HideAll()
         return 999;
     }
 
-    private void ShowStimuliByName(string name)
+    private int ReturnHintIndex(string name)
+    {
+        for (int index = 0; index < hintsCount; index++)
+        {
+            if (allHints[index].GetComponent<HintPrefab>().ID == name)
+            {
+                Debug.Log(name + " has index #: " + index);
+                return index;
+            }
+        }
+
+        return 999;
+    }
+
+    public void ShowStimulusByName(string name)
     {
         int _index = ReturnStimulusIndex(name);
 
@@ -110,5 +124,23 @@ private void HideAll()
             Debug.Log("ERROR: No stimuli with name '" + name + "'");
         else
             allStimuli[_index].SetActive(true);
+    }
+
+    public void ShowHintByName(string name, float duration)
+    {
+        int _index = ReturnHintIndex(name);
+        float timePassed = 0;
+
+        if (_index == 999)
+            Debug.Log("ERROR: No hint with name '" + name + "'");
+        else
+        {
+            allHints[_index].SetActive(true);
+            while (timePassed < duration)
+            {
+                timePassed += Time.deltaTime;
+            }
+            allHints[_index].SetActive(true);
+        }
     }
 }

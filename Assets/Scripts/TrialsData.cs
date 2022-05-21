@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class TrialsData
 {
-    [System.Serializable]
-    public class Trial
-    {
-        int trialNb;
-        int condition;
-        Location hintlocation;
-        float hintDuration;
-        List<Stimuli> stimuli;
-    }
+    public List<Trial> trials;
+}
+
+[System.Serializable]
+public class Trial
+{
+    public int trialNb;
+    public int condition;
+    public string hintLocation;
+    public float hintDuration;
+    public List<string> stimuli;
+}
 
     [System.Serializable]
     public class Location
     {
-        string position;
-        int plane;
+    public string position;
+    public int plane;
     }
 
     [System.Serializable]
@@ -37,4 +41,3 @@ public class TrialsData
     }
 
 
-}
