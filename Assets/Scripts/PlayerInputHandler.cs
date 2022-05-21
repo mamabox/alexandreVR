@@ -8,7 +8,8 @@ public class PlayerInputHandler : MonoBehaviour
 {
     private GameManager gameMngr;
 
-    public InputActionReference validateAction;
+    public InputActionReference validateTrue;
+    public InputActionReference validateFalse;
     public InputActionReference openMenuAction;
     public InputActionReference toggleDebugMenuAction;
 
@@ -23,10 +24,12 @@ public class PlayerInputHandler : MonoBehaviour
     private void TaskInteractionInputHandler()
     {
         openMenuAction.action.Enable();
-        validateAction.action.Enable();
+        validateTrue.action.Enable();
+        validateFalse.action.Enable();
         toggleDebugMenuAction.action.Enable();
         openMenuAction.action.performed += c => OnOpenMenu();
-        validateAction.action.performed += c => OnValidateAction();
+        validateTrue.action.performed += c => OnValidateTrue();
+        validateFalse.action.performed += c => OnValidateFalse();
         toggleDebugMenuAction.action.performed += c => OnToggleDebugMenu();
     }
 
@@ -36,13 +39,28 @@ public class PlayerInputHandler : MonoBehaviour
         gameMngr.EndSession();
     }
 
-    void OnValidateAction()
+    void OnValidateTrue()
     {
 
         if (gameMngr.sessionStarted)
         {
-            //gameMngr.OnPlayerInput(answer);
-            Debug.Log("PlayerInput");
+            gameMngr.OnPlayerInput(true);
+            Debug.Log("PlayerInput: TRUE");
+        }
+        else
+        {
+            Debug.Log("Dialog box is opened, cannot validate");
+        }
+
+    }
+
+    void OnValidateFalse()
+    {
+
+        if (gameMngr.sessionStarted)
+        {
+            gameMngr.OnPlayerInput(false);
+            Debug.Log("PlayerInput: TRUE");
         }
         else
         {

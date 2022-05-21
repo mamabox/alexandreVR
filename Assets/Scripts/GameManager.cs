@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-       
+       stimuliMngr = GameObject.Find("Stimuli Manager").GetComponent<StimuliManager>();
 
         //totalTrialNb =
         trialNb = 0;
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        StartSession();
+        //StartSession();
     }
 
     // Update is called once per frame
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         //UpdateUI();
     }
 
-    void StartSession()
+    public void StartSession()
     {
         Debug.Log("Startsession");
         sessionStarted = true;
@@ -73,12 +73,17 @@ public class GameManager : MonoBehaviour
 
     private void StartTrial()
     {
-        string _hint = trialsData.trials[trialNb].hintLocation;
+        string _hint = trialsData.trials[trialNb].hintID;
         List<string> _stimuli = trialsData.trials[trialNb].stimuli;
 
         Debug.Log("SHOW: " + _hint + " (hint)" + " + " + string.Join(",", _stimuli));
         //stimuliMngr.ShowHintByName();
-        //stimuliMngr.ShowStimulusByName("1_U_triangleR");
+
+        for (int x = 0; x < _stimuli.Count; x++)
+        {
+            stimuliMngr.ShowStimulusByName(_stimuli[x]);
+        }
+
     }
 
     private void EndTrial()

@@ -1,62 +1,64 @@
-[
- {
-   "condition": 1,
-   "hintID": "1_UR",
-   "hintDuration": 1000,
-   "stimuli": ["1_U_triangleG","1_UR_squareR","1_DR_diamondR","1_D_triangleG","1_DL_squareG","1_UL_diamondG"]
- },
- {
-   "condition": 1,
-   "hintID": "2_U",
-   "hintDuration": 500,
-   "stimuli": ["2_U_squareR","2_UR_triangleR","3_DR_triangleG","2_D_diamondR","2_DL_diamondG","2_UL_squareG"]
- },
- {
-   "condition": 1,
-   "hintID": "2_DL",
-   "hintDuration": 1000,
-   "stimuli": ["3_U_diamondR","3_UR_squareG","3_DR_triangleR","3_D_diamondG","2_DL_squareR","3_UL_triangleG"]
- },
- {
-   "condition": 1,
-   "hintID": "1_UL",
-   "hintDuration": 500,
-   "stimuli": ["2_U_triangleG","3_UR_diamondG","2_DR_squareG","3_D_triangleR","3_DL_diamondR","1_UL_squareR"]
- },
- {
-   "condition": 1,
-   "hintID": "1_DR",
-   "hintDuration": 500,
-   "stimuli": ["3_U_triangleR","2_UR_triangleG","2_DR_squareR","1_D_diamondG","1_DL_squareG","3_UL_diamondR"]
- },
- {
-   "condition": 1,
-   "hintID": "3_D",
-   "hintDuration": 1000,
-   "stimuli": ["3_U_triangleG","2_UR_triangleR","1_DR_diamondR","3_DR_squareG","3_D_squareR","1_UL_diamondG"]
- },
- {
-   "condition": 1,
-   "hintID": "1_DR",
-   "hintDuration": 1000,
-   "stimuli": ["2_U_diamondG","2_UR_diamondR","1_DR_squareR","2_D_triangleG","2_DL_triangleR","3_UL_squareG"]
- },
- {
-   "condition": 1,
-   "hintID": "3_U",
-   "hintDuration": 500,
-   "stimuli": ["1_U_triangleR","3_U_squareR","3_UR_triangleG","3_DR_diamondG","2_D_diamondR","1_DL_squareG"]
- },
- {
-   "condition": 1,
-   "hintID": "1_UR",
-   "hintDuration": 1000,
-   "stimuli": ["2_U_triangleR","1_UR_squareR","1_DR_diamondR","3_D_squareG","2_DL_diamondG","2_UL_triangleG"]
- },
- {
-   "condition": 1,
-   "hintID": "2_D",
-   "hintDuration": 1000,
-   "stimuli": ["1_U_diamondR","1_UR_triangleG","2_DR_triangleR","2_D_squareR","1_UL_diamondG","2_UL_squareG"]
- }
-]
+{
+    "trials":[
+        {
+            "condition": 1,
+            "hintID": "1_UR",
+            "hintDuration": 1000,
+            "stimuli": [ "1_U_triangleG", "1_UR_squareR", "1_DR_diamondR", "1_D_triangleG", "1_DL_squareG", "1_UL_diamondG" ]
+        },
+        {
+            "condition": 1,
+            "hintID": "2_U",
+            "hintDuration": 500,
+            "stimuli": [ "2_U_squareR", "2_UR_triangleR", "3_DR_triangleG", "2_D_diamondR", "2_DL_diamondG", "2_UL_squareG" ]
+        },
+        {
+            "condition": 1,
+            "hintID": "2_DL",
+            "hintDuration": 1000,
+            "stimuli": [ "3_U_diamondR", "3_UR_squareG", "3_DR_triangleR", "3_D_diamondG", "2_DL_squareR", "3_UL_triangleG" ]
+        },
+        {
+            "condition": 1,
+            "hintID": "1_UL",
+            "hintDuration": 500,
+            "stimuli": [ "2_U_triangleG", "3_UR_diamondG", "2_DR_squareG", "3_D_triangleR", "3_DL_diamondR", "1_UL_squareR" ]
+        },
+        {
+            "condition": 1,
+            "hintID": "1_DR",
+            "hintDuration": 500,
+            "stimuli": [ "3_U_triangleR", "2_UR_triangleG", "2_DR_squareR", "1_D_diamondG", "1_DL_squareG", "3_UL_diamondR" ]
+        },
+        {
+            "condition": 1,
+            "hintID": "3_D",
+            "hintDuration": 1000,
+            "stimuli": [ "3_U_triangleG", "2_UR_triangleR", "1_DR_diamondR", "3_DR_squareG", "3_D_squareR", "1_UL_diamondG" ]
+        },
+        {
+            "condition": 1,
+            "hintID": "1_DR",
+            "hintDuration": 1000,
+            "stimuli": [ "2_U_diamondG", "2_UR_diamondR", "1_DR_squareR", "2_D_triangleG", "2_DL_triangleR", "3_UL_squareG" ]
+        },
+        {
+            "condition": 1,
+            "hintID": "3_U",
+            "hintDuration": 500,
+            "stimuli": [ "1_U_triangleR", "3_U_squareR", "3_UR_triangleG", "3_DR_diamondG", "2_D_diamondR", "1_DL_squareG" ]
+        },
+        {
+            "condition": 1,
+            "hintID": "1_UR",
+            "hintDuration": 1000,
+            "stimuli": [ "2_U_triangleR", "1_UR_squareR", "1_DR_diamondR", "3_D_squareG", "2_DL_diamondG", "2_UL_triangleG" ]
+        },
+        {
+            "condition": 1,
+            "hintID": "2_D",
+            "hintDuration": 1000,
+            "stimuli": [ "1_U_diamondR", "1_UR_triangleG", "2_DR_triangleR", "2_D_squareR", "1_UL_diamondG", "2_UL_squareG" ]
+        }
+    ]
+}

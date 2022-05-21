@@ -315,6 +315,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2168356414902145967}
     m_Modifications:
+    - target: {fileID: 1476634746313423539, guid: a8b405c360d284a59b2f2791f4b939ff, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d7b005ef0cea412ba409cb8882cad69, type: 2}
     - target: {fileID: 1476634746313423540, guid: a8b405c360d284a59b2f2791f4b939ff, type: 3}
       propertyPath: m_Name
       value: Diamond Green
@@ -693,6 +697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square Red
       objectReference: {fileID: 0}
+    - target: {fileID: 7205433495126094110, guid: 4fcae151a73c0456daf69eecf3241018, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a4415951725c34d73af1244396ae7041, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fcae151a73c0456daf69eecf3241018, type: 3}
 --- !u!1 &2168356415155368731 stripped

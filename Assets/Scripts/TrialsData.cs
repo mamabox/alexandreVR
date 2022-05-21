@@ -13,7 +13,7 @@ public class Trial
 {
     public int trialNb;
     public int condition;
-    public string hintLocation;
+    public string hintID;
     public float hintDuration;
     public List<string> stimuli;
 }

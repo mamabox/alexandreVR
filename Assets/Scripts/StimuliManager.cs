@@ -94,7 +94,7 @@ public void HideAll()
         {
             if (allStimuli[index].GetComponent<StimulusPrefab>().ID == name)
             {
-                Debug.Log(name + " has index #: " + index);
+                //Debug.Log(name + " has index #: " + index);
                 return index;
             }
         }
@@ -108,7 +108,7 @@ public void HideAll()
         {
             if (allHints[index].GetComponent<HintPrefab>().ID == name)
             {
-                Debug.Log(name + " has index #: " + index);
+                //Debug.Log(name + " has index #: " + index);
                 return index;
             }
         }
