@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        StartSession();
+        //StartSession();
     }
 
     // Update is called once per frame
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         StartTrial();
     }
 
-    private void StartTrial()
+    public void StartTrial()
     {
         string _hint = trialsData.trials[trialNb-1].hintID;
         float _duration = trialsData.trials[trialNb - 1].hintDuration / 1000;

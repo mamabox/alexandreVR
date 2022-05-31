@@ -9,13 +9,13 @@
         {
             "condition": 1,
             "hintID": "2_U",
-            "hintDuration": 500,
+            "hintDuration": 2000,
             "stimuli": [ "2_U_squareR", "2_UR_triangleR", "3_DR_triangleG", "3_D_diamondR", "2_DL_diamondG", "2_UL_squareG" ]
         },
         {
             "condition": 1,
             "hintID": "2_DL",
-            "hintDuration": 1000,
+            "hintDuration": 4000,
             "stimuli": [ "3_U_diamondR", "1_UR_squareG", "2_DR_triangleR", "3_D_diamondG", "2_DL_squareR", "1_UL_triangleG" ]
         },
         {
