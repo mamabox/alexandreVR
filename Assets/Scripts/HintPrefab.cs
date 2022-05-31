@@ -6,7 +6,7 @@ public class HintPrefab : MonoBehaviour
 {
     public string ID;
     public string position;
-    public string plane;
+    public int plane;
 
     // Start is called before the first frame update
     void Start()

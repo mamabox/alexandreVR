@@ -75,12 +75,16 @@ public class GameManager : MonoBehaviour
     private void StartTrial()
     {
         string _hint = trialsData.trials[trialNb-1].hintID;
+        //float _duration = trialsData.trials[trialNb - 1].hintDuration;
+        float _duration = 1f;
         List<string> _stimuli = trialsData.trials[trialNb-1].stimuli;
 
         Debug.Log("TRIAL: " + trialNb + " / " + totalTrialNb + " SHOW: " + _hint + " (hint)" + " + " + string.Join(",", _stimuli));
-        //stimuliMngr.ShowHintByName();
+        
 
         stimuliMngr.HideAll();
+
+        stimuliMngr.ShowHintByName(_hint,_duration);
 
         for (int x = 0; x < _stimuli.Count; x++)
         {
