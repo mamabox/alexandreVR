@@ -5,10 +5,12 @@ using System.IO;
 
 public class StimuliManager : MonoBehaviour
 {
-    public List<GameObject> planePrefabs;
+    public List<GameObject> stimuliPlanePrefabs;
     public List<GameObject> allStimuli;
     public List<GameObject> hintPrefabs;
     public List<GameObject> allHints;
+
+    private GameManager gameMngr;
 
     private int stimuliCount;
     private int hintsCount;
@@ -16,6 +18,7 @@ public class StimuliManager : MonoBehaviour
 
     private void Awake()
     {
+        gameMngr = FindObjectOfType<GameManager>().GetComponent<GameManager>();
         ConfigureStimuli();
         HideAll();
     }
@@ -35,10 +38,17 @@ public class StimuliManager : MonoBehaviour
 
     private void ConfigureStimuli()
     {
-        for (int index = 0; index < planePrefabs.Count; index++) {     // for each plane
-            foreach (Transform stimuli in planePrefabs[index].transform) // for each stimuli
+        for (int index = 0; index < stimuliPlanePrefabs.Count; index++) {     // for each plane
+            foreach (Transform stimuli in stimuliPlanePrefabs[index].transform) // for each stimuli
             {
-                foreach (Transform stimulus in stimuli.transform) // for each stimulus
+                HintPrefab _hint = stimuli.GetComponent<StimuliPrefab>().hint.GetComponent<HintPrefab>();
+                _hint.position = stimuli.GetComponent<StimuliPrefab>().position;
+                _hint.plane = index + 1;
+                _hint.ID = _hint.plane.ToString() + delimiter + _hint.position.ToUpper();
+                _hint.name = "hint_" + _hint.ID;
+                allHints.Add(_hint.gameObject);
+
+                foreach (GameObject stimulus in stimuli.GetComponent<StimuliPrefab>().stimuli) // for each stimulus
                 {
                     StimulusPrefab _stimulus = stimulus.GetComponent<StimulusPrefab>();
 
@@ -56,6 +66,7 @@ public class StimuliManager : MonoBehaviour
             }
         }
         stimuliCount = allStimuli.Count;
+        hintsCount = allHints.Count;
     }
 
     private void ConfigureHints()
@@ -68,7 +79,7 @@ public class StimuliManager : MonoBehaviour
 
                 // Configure stimuli properties and name
                 _hint.ID = index+1.ToString() + delimiter + _hint.position.ToUpper();
-                _hint.name = _hint.ID;
+                _hint.name = "hint_"+_hint.ID;
 
                 // Add stimuli to allStimuli list
                 allHints.Add(_hint.gameObject);
@@ -85,6 +96,11 @@ public void HideAll()
         foreach (GameObject stimulus in allStimuli)
         {
             stimulus.gameObject.SetActive(false);
+        }
+
+        foreach (GameObject hint in allHints)
+        {
+            hint.gameObject.SetActive(false);
         }
     }
 
@@ -135,12 +151,45 @@ public void HideAll()
             Debug.Log("ERROR: No hint with name '" + name + "'");
         else
         {
+            gameMngr.freezePlayer = true;
             allHints[_index].SetActive(true);
+            Debug.Log("SHOW hint: " + name + " with index #: " + _index);
             while (timePassed < duration)
             {
                 timePassed += Time.deltaTime;
+                Debug.Log("timePassed = " + timePassed);
             }
-            allHints[_index].SetActive(true);
+            gameMngr.freezePlayer = false;
+            Debug.Log("HIDE hint: " + name + " with index #: " + _index);
+            allHints[_index].SetActive(false);
         }
     }
-}
+
+
+        public IEnumerator TrialDisplay(string name, float duration, List<string> stimuli)
+        {
+            int _index = ReturnHintIndex(name);
+
+            if (_index == 999)
+                Debug.Log("ERROR: No hint with name '" + name + "'");
+        else
+            {
+            gameMngr.freezePlayer = true;
+            allHints[_index].SetActive(true);
+                //Debug.Log("SHOW hint: " + name + " with index #: " + _index);
+
+                yield return new WaitForSeconds(duration);
+
+                //Debug.Log("HIDE hint: " + name + " with index #: " + _index);
+                allHints[_index].SetActive(false);
+            gameMngr.freezePlayer = false;
+
+            for (int x = 0; x < stimuli.Count; x++)
+            {
+                ShowStimulusByName(stimuli[x]);
+            }
+        }
+
+        }
+    }
+

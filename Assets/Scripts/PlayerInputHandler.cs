@@ -37,7 +37,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     void OnOpenMenu()
     {
-        Debug.Log("Open Menu");
+        Debug.Log("End Session and open Menu");
         gameMngr.EndSession();
     }
 
@@ -69,14 +69,15 @@ public class PlayerInputHandler : MonoBehaviour
     void OnValidateTrue()
     {
 
-        if (gameMngr.sessionStarted)
+        if (gameMngr.sessionStarted && !gameMngr.freezePlayer)
         {
-            gameMngr.OnPlayerInput(true);
             Debug.Log("PlayerInput: TRUE");
+            gameMngr.OnPlayerInput(true);
+            
         }
         else
         {
-            Debug.Log("Dialog box is opened, cannot validate");
+            Debug.Log("playerInput not allowed");
         }
 
     }
@@ -84,14 +85,15 @@ public class PlayerInputHandler : MonoBehaviour
     void OnValidateFalse()
     {
 
-        if (gameMngr.sessionStarted)
+        if (gameMngr.sessionStarted && !gameMngr.freezePlayer)
         {
-            gameMngr.OnPlayerInput(false);
             Debug.Log("PlayerInput: FALSE");
+            gameMngr.OnPlayerInput(false);
+            
         }
         else
         {
-            Debug.Log("Dialog box is opened, cannot validate");
+            Debug.Log("playerInput not allowed");
         }
 
     }

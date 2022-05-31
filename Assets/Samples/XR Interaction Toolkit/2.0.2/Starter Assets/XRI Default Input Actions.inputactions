@@ -1204,8 +1204,8 @@
                 },
                 {
                     "name": "",
-                    "id": "7237881c-4a86-49d5-a739-ebaf233d4b70",
-                    "path": "<Mouse>/rightButton",
+                    "id": "3e00d651-31b4-4c56-96ec-4873cd7d7d02",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1226,8 +1226,8 @@
                 },
                 {
                     "name": "",
-                    "id": "336f6a51-ef28-4028-b59c-e581de1f6122",
-                    "path": "<Mouse>/leftButton",
+                    "id": "3d3b1036-4150-43d3-bb05-fff7c230b763",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
