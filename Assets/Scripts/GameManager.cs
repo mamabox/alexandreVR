@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        //StartSession();
+        StartSession();
     }
 
     // Update is called once per frame
@@ -67,17 +67,20 @@ public class GameManager : MonoBehaviour
         Debug.Log("Startsession");
         sessionStarted = true;
         startTime = Time.time;
-        trialNb = 0;
+        trialNb = 1;
+        totalTrialNb = trialsData.trials.Count;
         StartTrial();
     }
 
     private void StartTrial()
     {
-        string _hint = trialsData.trials[trialNb].hintID;
-        List<string> _stimuli = trialsData.trials[trialNb].stimuli;
+        string _hint = trialsData.trials[trialNb-1].hintID;
+        List<string> _stimuli = trialsData.trials[trialNb-1].stimuli;
 
-        Debug.Log("SHOW: " + _hint + " (hint)" + " + " + string.Join(",", _stimuli));
+        Debug.Log("TRIAL: " + trialNb + " / " + totalTrialNb + " SHOW: " + _hint + " (hint)" + " + " + string.Join(",", _stimuli));
         //stimuliMngr.ShowHintByName();
+
+        stimuliMngr.HideAll();
 
         for (int x = 0; x < _stimuli.Count; x++)
         {
@@ -92,7 +95,7 @@ public class GameManager : MonoBehaviour
 
         if (trialNb < totalTrialNb)
         {
-            totalTrialNb++;
+            trialNb++;
             StartTrial();
         }
         else

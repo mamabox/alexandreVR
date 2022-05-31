@@ -1113,6 +1113,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Validate",
+                    "type": "Button",
+                    "id": "8e61e328-815b-4784-aa71-be799903d3f9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1174,7 +1183,7 @@
                 {
                     "name": "",
                     "id": "972384cd-97f8-45a3-bb6c-edc6d1726696",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/#(F)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1207,7 +1216,7 @@
                 {
                     "name": "",
                     "id": "0bde39bb-a841-4730-b274-c7181cf144f3",
-                    "path": "<Keyboard>/t",
+                    "path": "<Keyboard>/#(T)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1225,6 +1234,83 @@
                     "action": "ValidateTrue",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "988efe81-f7d4-4d53-a4bb-e890af13fd63",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Validate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "c1aee880-ec03-4be9-b9c8-857423a16465",
+                    "path": "<XRSimulatedController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Validate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "a80d9417-a9e2-47b1-97c5-410409173f7f",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Validate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "0a7b4016-8b17-466c-ba37-1022f2d1ba36",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Validate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "e2e32588-cf0d-4606-a239-8872fc7f74e1",
+                    "path": "<XRSimulatedController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Validate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "55d28a9b-8ebe-4dbb-94dc-10d9091854d6",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Validate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "9445a49b-67d5-40da-bd1a-b0b8e0587bac",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Validate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
