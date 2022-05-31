@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("TRIAL: " + trialNb + " / " + totalTrialNb + " SHOW: " + _hint + " (hint)" + " + " + string.Join(",", _stimuli));
         
 
-        stimuliMngr.HideAll();
+        //stimuliMngr.HideAll();
 
         //stimuliMngr.ShowHintByName(_hint,_duration);
 
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
 
     private void EndTrial()
     {
-
+        stimuliMngr.HideAll();
         //IF there are trials left
         if (trialNb < totalTrialNb)
         {
