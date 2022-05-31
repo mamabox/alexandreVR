@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     private int trialNb;
     private int totalTrialNb;
+    private int trialNbPause;
 
     //Time
     private float startTime;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     private bool playerChoice;
     public bool openUI;
     public bool sessionStarted;
+    public bool freezePlayer;
 
     //Save Data
     string savePath;
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
 
         //totalTrialNb =
         trialNb = 0;
+        freezePlayer = true;
 
         //OpenMenu();
        SetSavePath();
@@ -68,15 +71,17 @@ public class GameManager : MonoBehaviour
         sessionStarted = true;
         startTime = Time.time;
         trialNb = 1;
+        trialNbPause = 2;
         totalTrialNb = trialsData.trials.Count;
+        freezePlayer = false;
         StartTrial();
     }
 
     private void StartTrial()
     {
         string _hint = trialsData.trials[trialNb-1].hintID;
-        //float _duration = trialsData.trials[trialNb - 1].hintDuration;
-        float _duration = 3;
+        float _duration = trialsData.trials[trialNb - 1].hintDuration / 1000;
+        //float _duration = 3;
         List<string> _stimuli = trialsData.trials[trialNb-1].stimuli;
 
         Debug.Log("TRIAL: " + trialNb + " / " + totalTrialNb + " SHOW: " + _hint + " (hint)" + " + " + string.Join(",", _stimuli));
@@ -86,12 +91,8 @@ public class GameManager : MonoBehaviour
 
         //stimuliMngr.ShowHintByName(_hint,_duration);
 
-        StartCoroutine(stimuliMngr.ShowHint(_hint,_duration,_stimuli));
+        StartCoroutine(stimuliMngr.TrialDisplay(_hint,_duration,_stimuli));
 
-        for (int x = 0; x < _stimuli.Count; x++)
-        {
-            //stimuliMngr.ShowStimulusByName(_stimuli[x]);
-        }
 
     }
 
@@ -99,7 +100,7 @@ public class GameManager : MonoBehaviour
     private void EndTrial()
     {
 
-
+        //IF there are trials left
         if (trialNb < totalTrialNb)
         {
             trialNb++;
@@ -114,6 +115,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("EndSession");
         sessionStarted = false;
+        freezePlayer = true;
     }
 
     private void OpenMenu()

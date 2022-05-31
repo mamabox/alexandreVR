@@ -21,7 +21,7 @@
         {
             "condition": 1,
             "hintID": "1_UL",
-            "hintDuration": 500,
+            "hintDuration": 200,
             "stimuli": [ "2_U_triangleG", "3_UR_diamondG", "2_DR_squareG", "3_D_triangleR", "1_DL_diamondR", "1_UL_squareR" ]
         },
         {
@@ -51,7 +51,7 @@
         {
             "condition": 1,
             "hintID": "3_UR",
-            "hintDuration": 1000,
+            "hintDuration": 500,
             "stimuli": [ "2_U_triangleR", "3_UR_squareR", "1_DR_diamondR", "3_D_squareG", "2_DL_diamondG", "2_UL_triangleG" ]
         },
         {
