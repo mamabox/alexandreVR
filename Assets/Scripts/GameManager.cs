@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         sessionStarted = true;
         startTime = Time.time;
         trialNb = 1;
-        trialNbPause = 5;
+        trialNbPause = 10;
         totalTrialNb = trialsData.trials.Count;
         freezePlayer = true;
         StartTrial();
@@ -125,7 +125,8 @@ public class GameManager : MonoBehaviour
             if (trialNb % trialNbPause == 0)
             {
                 trialNb++;
-                dialogBox.GetComponent<DialogBox>().OpenDialogBox("Bloc de Pause, quand vous souhaitez continuer appuyer sur le bouton [Continuer]", "pause");
+                dialogBox.GetComponent<DialogBox>().OpenDialogBox(trialsData.instructions.pause,"pause);
+                //dialogBox.GetComponent<DialogBox>().OpenDialogBox("string, "pause");
             }
             else
             {
@@ -143,7 +144,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("EndSession");
         sessionStarted = false;
         freezePlayer = true;
-        dialogBox.GetComponent<DialogBox>().OpenDialogBox("This is the end of the experiment", "session");
+        dialogBox.GetComponent<DialogBox>().OpenDialogBox(trialsData.instructions.end, "session");
     }
 
     private void OpenMenu()

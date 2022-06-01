@@ -30,7 +30,8 @@ public class DialogBox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        string _text = gameMngr.trialsData.instructions.start;
+        instructions.text = _text.Replace("|", System.Environment.NewLine);
     }
 
     // Update is called once per frame

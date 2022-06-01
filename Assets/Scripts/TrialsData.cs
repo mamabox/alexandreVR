@@ -5,8 +5,17 @@ using UnityEngine;
 [System.Serializable]
 public class TrialsData
 {
+    public Instructions instructions;
     public List<Trial> trials;
-    //public List<SaveMyData> savedData;
+}
+
+[System.Serializable]
+public class Instructions
+{
+    public string start;
+    public string endDemo;
+    public string pause;
+    public string end;
 }
 
 [System.Serializable]

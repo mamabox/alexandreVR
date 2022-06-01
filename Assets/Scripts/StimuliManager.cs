@@ -16,11 +16,14 @@ public class StimuliManager : MonoBehaviour
     private int hintsCount;
     private char delimiter = '_';
 
+    private float hintDuration;
+
     private void Awake()
     {
         gameMngr = FindObjectOfType<GameManager>().GetComponent<GameManager>();
         ConfigureStimuli();
         HideAll();
+        hintDuration = 0.2f;    // Time in sec the hint is displayed on screen
     }
 
     // Start is called before the first frame update
@@ -170,7 +173,7 @@ public void HideAll()
     */
 
 
-        public IEnumerator TrialDisplay(string name, float duration, List<string> stimuli)
+        public IEnumerator TrialDisplay(string name, float hintDelay, List<string> stimuli)
         {
             int _index = ReturnHintIndex(name);
 
@@ -179,20 +182,23 @@ public void HideAll()
         else
             {
             gameMngr.freezePlayer = true;
-            allHints[_index].SetActive(true);
+            
                 //Debug.Log("SHOW hint: " + name + " with index #: " + _index);
 
-                yield return new WaitForSeconds(duration);
-
-                //Debug.Log("HIDE hint: " + name + " with index #: " + _index);
-                allHints[_index].SetActive(false);
-            gameMngr.freezePlayer = false;
-            gameMngr.trialStartTime = Time.time;
+                yield return new WaitForSeconds(hintDelay);
+            allHints[_index].SetActive(true);
+            yield return new WaitForSeconds(hintDuration);
+            //Debug.Log("HIDE hint: " + name + " with index #: " + _index);
+            allHints[_index].SetActive(false);
+            
+            
 
             for (int x = 0; x < stimuli.Count; x++)
             {
                 ShowStimulusByName(stimuli[x]);
             }
+            gameMngr.freezePlayer = false;
+            gameMngr.trialStartTime = Time.time; // Start trial timer
         }
 
         }
