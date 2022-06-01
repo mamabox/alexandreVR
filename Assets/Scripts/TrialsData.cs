@@ -6,6 +6,7 @@ using UnityEngine;
 public class TrialsData
 {
     public List<Trial> trials;
+    //public List<SaveMyData> savedData;
 }
 
 [System.Serializable]
@@ -40,4 +41,11 @@ public class Trial
         public Location location;
     }
 
+[System.Serializable]
+public class SaveMyData
+{
+    public bool playerChoice;
+    public float time;
+    public bool isChoiceCorrect;
+}
 

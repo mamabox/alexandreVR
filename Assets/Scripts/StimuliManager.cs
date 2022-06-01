@@ -142,6 +142,7 @@ public void HideAll()
             allStimuli[_index].SetActive(true);
     }
 
+    /*
     public void ShowHintByName(string name, float duration)
     {
         int _index = ReturnHintIndex(name);
@@ -159,11 +160,14 @@ public void HideAll()
                 timePassed += Time.deltaTime;
                 Debug.Log("timePassed = " + timePassed);
             }
-            gameMngr.freezePlayer = false;
+            
             Debug.Log("HIDE hint: " + name + " with index #: " + _index);
             allHints[_index].SetActive(false);
+            gameMngr.freezePlayer = false;
+            gameMngr.trialStartTime = Time.time;
         }
     }
+    */
 
 
         public IEnumerator TrialDisplay(string name, float duration, List<string> stimuli)
@@ -183,6 +187,7 @@ public void HideAll()
                 //Debug.Log("HIDE hint: " + name + " with index #: " + _index);
                 allHints[_index].SetActive(false);
             gameMngr.freezePlayer = false;
+            gameMngr.trialStartTime = Time.time;
 
             for (int x = 0; x < stimuli.Count; x++)
             {

@@ -14,6 +14,8 @@ public class PlayerInputHandler : MonoBehaviour
     public InputActionReference openMenuAction;
     public InputActionReference toggleDebugMenuAction;
 
+    
+
     private void Awake()
     {
         gameMngr = FindObjectOfType<GameManager>().GetComponent<GameManager>();
@@ -65,6 +67,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     }
     */
+ 
 
     void OnValidateTrue()
     {

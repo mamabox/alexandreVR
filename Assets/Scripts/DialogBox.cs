@@ -43,7 +43,7 @@ public class DialogBox : MonoBehaviour
     public void OpenDialogBox(string text, string mode)
     {
         this.gameObject.SetActive(true);
-
+        gameMngr.ShowControllers(true);
         //charController.freezeMovement = true;
         gameMngr.freezePlayer = true;
         //Debug.Log("Open a dialog box with text: " + text);
@@ -72,6 +72,7 @@ public class DialogBox : MonoBehaviour
 
     public void CloseDialogBox()
     {
+        gameMngr.ShowControllers(false);
         if (dialogBoxMode == "session")
         {
             gameMngr.StartSession();
