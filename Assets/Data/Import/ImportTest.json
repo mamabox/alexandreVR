@@ -1,33 +1,39 @@
 {
-    "trials":[
+    "instructions": {
+        "start": "Bonjour, vous allez participer à une expérience qui vise à étudier l’attention. Durant toute l’expérience, il vous est demandé de constamment fixer une croix de fixation centrale.Tout d’abord, vous verrez apparaître 6 cercles, puis un flash lumineux apparaîtra dans l’un des 6 cercles, veuillez ignorer ce flash. Ensuite, vous verrez différentes formes géométriques.| Dans chacun de ces 6 cercles, il y a différentes formes géométriques qui vont apparaître. S’il y a un carré rouge vous devez appuyer sur le bouton (A) de la manette DROITE. S’il n’y a pas de carré rouge, vous devez cliquer sur le bouton (X) de la manette GAUCHE. Il faut essayer de répondre le plus juste possible et le plus rapidement possible. Vous allez commencer avec un bloc entrainement de 64 essais afin de vous familiariser avec la tâche puis après nous passerons à l’expérience. L’entrainement est identique à l’expérience.",
+        "endDemo": "Vous avez fini le bloc d'entrainement.||Pour commencer commencer l'expérience, appuyez sur le bouton [Commencer].",
+        "pause": "Bloc de Pause|Quand vous souhaitez continuer appuyez sur le bouton [Continuer].",
+        "end": "Vous avez fini l'expérience."
+    },
+    "trials": [
         {
             "condition": 1,
             "hintID": "2_UR",
-            "hintDuration": 2000,
+            "hintDuration": 1000,
             "stimuli": [ "1_U_triangleG", "2_UR_squareR", "2_DR_diamondR", "1_D_triangleG", "3_DL_squareG", "3_UL_diamondG" ]
         },
         {
             "condition": 1,
             "hintID": "2_U",
-            "hintDuration": 2000,
+            "hintDuration": 1000,
             "stimuli": [ "2_U_squareR", "2_UR_triangleR", "3_DR_triangleG", "3_D_diamondR", "2_DL_diamondG", "2_UL_squareG" ]
         },
         {
             "condition": 1,
             "hintID": "2_DL",
-            "hintDuration": 1000,
+            "hintDuration": 1300,
             "stimuli": [ "3_U_diamondR", "1_UR_squareG", "2_DR_triangleR", "3_D_diamondG", "2_DL_squareR", "1_UL_triangleG" ]
         },
         {
             "condition": 1,
             "hintID": "1_UL",
-            "hintDuration": 200,
+            "hintDuration": 1200,
             "stimuli": [ "2_U_triangleG", "3_UR_diamondG", "2_DR_squareG", "3_D_triangleR", "1_DL_diamondR", "1_UL_squareR" ]
         },
         {
             "condition": 1,
             "hintID": "2_DR",
-            "hintDuration": 500,
+            "hintDuration": 800,
             "stimuli": [ "3_U_triangleR", "2_UR_triangleG", "2_DR_squareR", "1_D_diamondG", "1_DL_squareG", "3_UL_diamondR" ]
         },
         {
@@ -45,19 +51,79 @@
         {
             "condition": 1,
             "hintID": "2_UL",
-            "hintDuration": 500,
+            "hintDuration": 1200,
             "stimuli": [ "1_U_triangleR", "2_UL_squareR", "3_UR_triangleG", "3_DR_diamondG", "2_D_diamondR", "1_DL_squareG" ]
         },
         {
             "condition": 1,
             "hintID": "3_UR",
-            "hintDuration": 500,
+            "hintDuration": 900,
             "stimuli": [ "2_U_triangleR", "3_UR_squareR", "1_DR_diamondR", "3_D_squareG", "2_DL_diamondG", "2_UL_triangleG" ]
         },
         {
             "condition": 1,
             "hintID": "2_D",
+            "hintDuration": 1100,
+            "stimuli": [ "3_U_diamondR", "1_UR_triangleG", "2_DR_triangleR", "2_D_squareR", "1_UL_diamondG", "3_DL_squareG" ]
+        },
+        {
+            "condition": 2,
+            "hintID": "1_UR",
             "hintDuration": 1000,
+            "stimuli": [ "1_U_triangleG", "2_UR_squareR", "2_DR_diamondR", "1_D_triangleG", "3_DL_squareG", "3_UL_diamondG" ]
+        },
+        {
+            "condition": 2,
+            "hintID": "3_U",
+            "hintDuration": 1000,
+            "stimuli": [ "2_U_squareR", "2_UR_triangleR", "3_DR_triangleG", "3_D_diamondR", "2_DL_diamondG", "2_UL_squareG" ]
+        },
+        {
+            "condition": 2,
+            "hintID": "1_DL",
+            "hintDuration": 1300,
+            "stimuli": [ "3_U_diamondR", "1_UR_squareG", "2_DR_triangleR", "3_D_diamondG", "2_DL_squareR", "1_UL_triangleG" ]
+        },
+        {
+            "condition": 2,
+            "hintID": "3_UL",
+            "hintDuration": 1200,
+            "stimuli": [ "2_U_triangleG", "3_UR_diamondG", "2_DR_squareG", "3_D_triangleR", "1_DL_diamondR", "1_UL_squareR" ]
+        },
+        {
+            "condition": 2,
+            "hintID": "3_DR",
+            "hintDuration": 800,
+            "stimuli": [ "3_U_triangleR", "2_UR_triangleG", "2_DR_squareR", "1_D_diamondG", "1_DL_squareG", "3_UL_diamondR" ]
+        },
+        {
+            "condition": 2,
+            "hintID": "1_D",
+            "hintDuration": 1000,
+            "stimuli": [ "3_U_triangleG", "2_UR_triangleR", "1_DR_diamondR", "3_DL_squareG", "2_D_squareR", "1_UL_diamondG" ]
+        },
+        {
+            "condition": 2,
+            "hintID": "3_DR",
+            "hintDuration": 1000,
+            "stimuli": [ "1_U_diamondG", "2_UR_diamondR", "1_DR_squareR", "2_D_triangleG", "2_DL_triangleR", "3_UL_squareG" ]
+        },
+        {
+            "condition": 2,
+            "hintID": "1_UL",
+            "hintDuration": 1200,
+            "stimuli": [ "1_U_triangleR", "2_UL_squareR", "3_UR_triangleG", "3_DR_diamondG", "2_D_diamondR", "1_DL_squareG" ]
+        },
+        {
+            "condition": 2,
+            "hintID": "1_UR",
+            "hintDuration": 900,
+            "stimuli": [ "2_U_triangleR", "3_UR_squareR", "1_DR_diamondR", "3_D_squareG", "2_DL_diamondG", "2_UL_triangleG" ]
+        },
+        {
+            "condition": 2,
+            "hintID": "3_D",
+            "hintDuration": 1100,
             "stimuli": [ "3_U_diamondR", "1_UR_triangleG", "2_DR_triangleR", "2_D_squareR", "1_UL_diamondG", "3_DL_squareG" ]
         }
     ]
