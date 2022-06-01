@@ -141,6 +141,7 @@ public class GameManager : MonoBehaviour
     public void EndSession()
     {
         Debug.Log("EndSession");
+        endTime = Time.time;
         sessionStarted = false;
         freezePlayer = true;
         dialogBox.GetComponent<DialogBox>().OpenDialogBox("This is the end of the experiment", "session");
@@ -174,7 +175,11 @@ public class GameManager : MonoBehaviour
 
     private void UpdateClock()
     {
-        totalTime = TimeSpan.FromSeconds(Time.time - startTime);
+        if (sessionStarted)
+            totalTime = TimeSpan.FromSeconds(Time.time - startTime);
+        else
+            totalTime = TimeSpan.FromMilliseconds(endTime - startTime);
+
         if (sessionStarted && !freezePlayer)  //if session is ongoing
         {
             trialTime = TimeSpan.FromSeconds(Time.time - trialStartTime);

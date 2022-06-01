@@ -20,7 +20,7 @@ public class DataImport : MonoBehaviour
         gameMngr = FindObjectOfType<GameManager>().GetComponent<GameManager>();
         gameMngr.importPath = Path.Combine(Directory.GetCurrentDirectory(), "Assets/Data/Import/");
         dataFile = gameMngr.importPath + "importTest.json";
-        dataFileAndroid = Path.Combine(Application.streamingAssetsPath + "/" + "importTest.json");
+        dataFileAndroid = Path.Combine(Application.streamingAssetsPath + "/" + "ImportTest.json");
 
         ImportTaskData();
 
