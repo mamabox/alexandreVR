@@ -6,6 +6,7 @@ using UnityEngine;
 public class TrialsData
 {
     public Instructions instructions;
+    public int trialNbPause;
     public List<Trial> trials;
 }
 

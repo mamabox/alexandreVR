@@ -1,17 +1,17 @@
 ﻿<Properties StartupConfiguration="{72E0A918-0F2E-A054-AF57-CED979314417}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TrialsData.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DialogBox.cs">
     <Files>
-      <File FileName="Assets/Scripts/DialogBox.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/StimuliPrefab.cs" />
       <File FileName="Assets/Scripts/StimulusPrefab.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/HintPrefab.cs" />
       <File FileName="Assets/Scripts/PlayerInputHandler.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/TrialSaveData.cs" Line="1" Column="1" />
       <File FileName="Assets/Data/Import/ImportTest.json" Line="32" Column="11" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="110" Column="23" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="159" Column="98" />
       <File FileName="Assets/Scripts/StimuliManager.cs" Line="73" Column="9" NotebookId="1" />
       <File FileName="Assets/Scripts/DataImport.cs" Line="1" Column="1" NotebookId="1" />
       <File FileName="Assets/Scripts/TrialsData.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/DialogBox.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,7 +28,7 @@
                 </Node>
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="TrialsData.cs" selected="True" />
+                <Node name="DialogBox.cs" selected="True" />
               </Node>
             </Node>
           </Node>

@@ -56,7 +56,7 @@ public class DialogBox : MonoBehaviour
         {
             buttonText.text = "Recommencer";
         }
-        else if (dialogBoxMode == "trial")
+        else if (dialogBoxMode == "trial" || dialogBoxMode == "endDemo")
         {
             buttonText.text = "Commencer";
         }
@@ -78,7 +78,7 @@ public class DialogBox : MonoBehaviour
         {
             gameMngr.StartSession();
         }
-        else if (dialogBoxMode == "trial" || dialogBoxMode == "pause")
+        else if (dialogBoxMode == "trial" || dialogBoxMode == "pause" || dialogBoxMode == "endDemo")
         {
             gameMngr.StartTrial();
         }

@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         sessionStarted = true;
         startTime = Time.time;
         trialNb = 1;
-        trialNbPause = 10;
+        trialNbPause = trialsData.trialNbPause;
         totalTrialNb = trialsData.trials.Count;
         demoTrialNb = CountDemoTrials();
         freezePlayer = true;
@@ -153,19 +153,25 @@ public class GameManager : MonoBehaviour
         //IF there are trials left
         if (trialNb < totalTrialNb)
         {
+                if (trialNb == demoTrialNb) // IF this is the last demo trial
+											{
+                trialNb++;
+                dialogBox.GetComponent<DialogBox>().OpenDialogBox(trialsData.instructions.endDemo, "endDemo");
+            }
 
-            if (trialNb % trialNbPause == 0)
-            {
-                trialNb++;
-                string temp = trialsData.instructions.pause;
-                dialogBox.GetComponent<DialogBox>().OpenDialogBox(trialsData.instructions.pause, "pause");
-                //dialogBox.GetComponent<DialogBox>().OpenDialogBox("string, "pause");
-            }
-            else
-            {
-                trialNb++;
-                StartTrial();
-            }
+                else if ((trialNb -demoTrialNb) % trialNbPause == 0)    // if this a pause moment
+                {
+                    trialNb++;
+                    dialogBox.GetComponent<DialogBox>().OpenDialogBox(trialsData.instructions.pause, "pause");
+                    //dialogBox.GetComponent<DialogBox>().OpenDialogBox("string, "pause");
+                }
+                else // move on the the next trial
+                {
+                    trialNb++;
+                    StartTrial();
+                }
+
+
         }
         else
             EndSession();
