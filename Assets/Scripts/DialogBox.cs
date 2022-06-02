@@ -25,13 +25,13 @@ public class DialogBox : MonoBehaviour
         gameMngr = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
         //charController = GameObject.FindGameObjectWithTag("PlayerController").GetComponent<charController>();
         dialogBoxMode = "session";
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        string _text = gameMngr.trialsData.instructions.start;
-        instructions.text = _text.Replace("|", System.Environment.NewLine);
+
     }
 
     // Update is called once per frame
@@ -40,6 +40,7 @@ public class DialogBox : MonoBehaviour
 
     }
 
+    
 
     public void OpenDialogBox(string text, string mode)
     {
@@ -54,7 +55,7 @@ public class DialogBox : MonoBehaviour
 
         if (dialogBoxMode == "session")
         {
-            buttonText.text = "Recommencer";
+            buttonText.text = "Commencer";
         }
         else if (dialogBoxMode == "trial" || dialogBoxMode == "endDemo")
         {
@@ -62,7 +63,7 @@ public class DialogBox : MonoBehaviour
         }
         else if (dialogBoxMode == "end")
         {
-            buttonText.text = "Fin";
+            buttonText.text = "Recommencer";
         }
         else if (dialogBoxMode == "pause")
         {
@@ -84,7 +85,7 @@ public class DialogBox : MonoBehaviour
         }
         else if (dialogBoxMode == "end")
         {
-            //Quit application;
+            gameMngr.StartSession();
         }
         else if (dialogBoxMode != "none")
         {

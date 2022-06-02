@@ -1128,7 +1128,7 @@
                 {
                     "name": "",
                     "id": "dceb9de2-f3b7-45c6-9ebc-feb4d7edec44",
-                    "path": "<XRController>{RightHand}/thumbstickClicked",
+                    "path": "<XRController>{LeftHand}/thumbstickClicked",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1150,7 +1150,7 @@
                 {
                     "name": "",
                     "id": "28faea1b-7a3b-4ca7-a60b-0007e6b023ef",
-                    "path": "<XRController>{LeftHand}/thumbstickClicked",
+                    "path": "<XRController>{RightHand}/thumbstickClicked",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1182,17 +1182,6 @@
                 },
                 {
                     "name": "",
-                    "id": "972384cd-97f8-45a3-bb6c-edc6d1726696",
-                    "path": "<Keyboard>/#(F)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ValidateFalse",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "cb6c4858-2bb9-4b39-bfb0-3cce90bcf9da",
                     "path": "<XRController>{LeftHand}/primaryButton",
                     "interactions": "",
@@ -1210,17 +1199,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "ValidateFalse",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0bde39bb-a841-4730-b274-c7181cf144f3",
-                    "path": "<Keyboard>/#(T)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ValidateTrue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

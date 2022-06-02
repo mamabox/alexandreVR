@@ -19,8 +19,8 @@ public class DataImport : MonoBehaviour
 
         gameMngr = FindObjectOfType<GameManager>().GetComponent<GameManager>();
         gameMngr.importPath = Path.Combine(Directory.GetCurrentDirectory(), "Assets/Data/Import/");
-        dataFile = gameMngr.importPath + "importTest.json";
-        dataFileAndroid = Path.Combine(Application.streamingAssetsPath + "/" + "ImportTest.json");
+        dataFile = gameMngr.importPath + "SessionData.json";
+        dataFileAndroid = Path.Combine(Application.streamingAssetsPath + "/" + "SessionData.json");
 
         ImportTaskData();
 
@@ -41,6 +41,7 @@ public class DataImport : MonoBehaviour
             Debug.Log("Read from jsonFile");
             ImportTaskData(dataFile);
             //gameMngr.trials = JsonUtility.FromJson<TrialsData>(gameMngr.jsonFile.text);
+            
 
         }
         //gameManager.UpdateUIAndroid();
@@ -61,9 +62,10 @@ public class DataImport : MonoBehaviour
         else
         {
             sJson = www2.downloadHandler.text;
-            // Debug.Log(sJson);
+            //Debug.Log(sJson);
             gameMngr.trialsData = JsonUtility.FromJson<TrialsData>(sJson);
-
+            Debug.Log("Data imported");
+            gameMngr.dialogBox.GetComponent<DialogBox>().OpenDialogBox(gameMngr.trialsData.instructions.start, "session"); // TEMP
         }
     }
 

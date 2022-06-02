@@ -74,7 +74,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        //StartSession();
+        //Debug.Log("texte=" + trialsData.instructions.start);
+        //dialogBox.GetComponent<DialogBox>().OpenDialogBox(trialsData.instructions.start, "session");
     }
 
     // Update is called once per frame
@@ -196,7 +197,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("EndSession");
         sessionStarted = false;
         freezePlayer = true;
-        dialogBox.GetComponent<DialogBox>().OpenDialogBox(trialsData.instructions.end, "session");
+        dialogBox.GetComponent<DialogBox>().OpenDialogBox(trialsData.instructions.end, "end");
         StopSavingData();
         stimuliMngr.HideAll();
     }
