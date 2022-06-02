@@ -50,6 +50,10 @@ public class GameManager : MonoBehaviour
     public TextAsset jsonFile;
     private int condition;
     private bool isAnswerCorrect;
+    private StreamWriter sw;
+    private string fileName;
+    private char fileNameDelimiter = '-';
+    private char delimiter = ',';
 
     private void Awake()
     {
@@ -184,6 +188,7 @@ public class GameManager : MonoBehaviour
         sessionStarted = false;
         freezePlayer = true;
         dialogBox.GetComponent<DialogBox>().OpenDialogBox(trialsData.instructions.end, "session");
+        StopSavingData();
     }
 
     private void OpenMenu()
@@ -269,10 +274,51 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void SaveData()
+    private void StartSavingData()
     {
-        Debug.Log("SaveData");
+        SetFileName();
+        sw = File.AppendText(gameMngr.filePath + fileNameTask);
+        sw.WriteLine(HeadersConstructor()); //Add Headers to the file
     }
 
+    private void SetFileName()
+    {
+        string participantID = "0";
+        dateTime = System.DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        fileNameTask = dateTime + fileNameDelimiter + participantID + ".csv";
+    }
+
+    private string HeadersConstructor()
+    {
+        string sessionHeader = "dateTime" + delimiter + "participantID";
+        string trialHeader = "trialNb" + delimiter + "condition" + delimiter + "hintID" + delimiter + "hintDelay" + delimiter + "stimuli";
+        string responseHeader = "correctness" + delimiter + "reactionTime" + delimiter + "answer";
+
+        return sessionHeader + delimiter + trialHeader + delimiter + responseHeader;
+    }
+
+    private void SaveData()
+    {
+        int adjustedTrialNb = trialNb - demoTrialNb;
+        Trial _trial = adjustedTrialNb];
+        string correctness;
+
+        Debug.Log("SaveData");
+        string sessionData = dateTime + delimiter + participantID;
+        string trialData = adjustedTrialNb.ToString() + _trial.condition + delimiter + _trial.hintID + delimiter + _trial.hintDuration + delimiter + _trial.stimuli.Split('_');
+        if (isAnswerCorrect)
+            correctness = "correct"
+        else
+            correctness = "incorrect"
+        string responseData =  correctness + delimiter + lastTrialTime.ToString(@"ss\:fff") + delimiter + playerChoice
+
+        sw.WriteLine(sessionData + trialData + responseData);
+    }
+
+    public void StopSavingData()
+    {
+        sw.Close();
+
+    }
 
 }
