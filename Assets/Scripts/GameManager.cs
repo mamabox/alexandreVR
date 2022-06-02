@@ -161,6 +161,7 @@ public class GameManager : MonoBehaviour
 
     private void EndTrial()
     {
+        //Debug.Log("EndTrial()");
         stimuliMngr.HideAll();
         //IF there are trials left
         if (trialNb < totalTrialNb)
@@ -294,7 +295,7 @@ public class GameManager : MonoBehaviour
     private void SetFileName()
     {
         dateTime = System.DateTime.Now.ToString("yyyyMMdd_HHmmss");
-        fileName = dateTime + fileNameDelimiter + participantID + ".csv";
+        fileName = dateTime + fileNameDelimiter +"ID"+participantID + ".csv";
     }
 
     private string HeadersConstructor()
@@ -308,12 +309,13 @@ public class GameManager : MonoBehaviour
 
     private void SaveData()
     {
+        //Debug.Log("SaveData");
         int adjustedTrialNb = trialNb - demoTrialNb;
-        Trial _trial = trialsData.trials[trialNb];
+        Trial _trial = trialsData.trials[trialNb-1];
         string correctness;
         
 
-        Debug.Log("SaveData");
+        
         string sessionData = dateTime + delimiter + participantID;
         //string trialData = adjustedTrialNb.ToString() + _trial.condition + delimiter + _trial.hintID + delimiter + _trial.hintDuration + delimiter + String.Join("_, _trial.stimuli);
         string trialData = adjustedTrialNb.ToString() + delimiter + _trial.condition + delimiter + _trial.hintID + delimiter + _trial.hintDuration + delimiter + String.Join("_", _trial.stimuli);
