@@ -23,7 +23,12 @@ public class GameManager : MonoBehaviour
 
     private int trialNb;
     private int totalTrialNb;
+    private int demoTrialNb;
     private int trialNbPause;
+    private bool demoTrials;
+
+    //UI
+    private string demoUIText;
 
     //Time
     private float startTime;
@@ -78,6 +83,7 @@ public class GameManager : MonoBehaviour
         trialNb = 1;
         trialNbPause = 10;
         totalTrialNb = trialsData.trials.Count;
+        demoTrialNb = CountDemoTrials();
         freezePlayer = true;
         StartTrial();
     }
@@ -89,9 +95,9 @@ public class GameManager : MonoBehaviour
         condition = trialsData.trials[trialNb - 1].condition;
         //float _duration = 3;
         List<string> _stimuli = trialsData.trials[trialNb - 1].stimuli;
+        IsDemoTrial();
 
-
-        Debug.Log("TRIAL: " + trialNb + " / " + totalTrialNb + " SHOW: " + _hint + " (hint)" + " + " + string.Join(",", _stimuli));
+        Debug.Log("TRIAL: " + trialNb + " / " + totalTrialNb + demoUIText + " SHOW: " + _hint + " (hint)" + " + " + string.Join(",", _stimuli));
 
 
         //stimuliMngr.HideAll();
@@ -100,6 +106,32 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(stimuliMngr.TrialDisplay(_hint, _duration, _stimuli));
 
+
+    }
+
+    private void IsDemoTrial()
+    {
+        if (trialNb <= demoTrialNb) {
+            demoTrials = true;
+            demoUIText = " (DEMO)";
+        }
+        else
+        {
+            demoTrials = false;
+            demoUIText = "";
+        }
+
+    }
+
+    private int CountDemoTrials()
+    {
+        int _demoNb = 0;
+        foreach (Trial trial in trialsData.trials) {
+            if (trial.condition == 0)
+                _demoNb++;
+                }
+        Debug.Log("Nb of demo trials = " + _demoNb);
+        return _demoNb;
 
     }
 
@@ -125,7 +157,8 @@ public class GameManager : MonoBehaviour
             if (trialNb % trialNbPause == 0)
             {
                 trialNb++;
-                dialogBox.GetComponent<DialogBox>().OpenDialogBox(trialsData.instructions.pause,"pause);
+                string temp = trialsData.instructions.pause;
+                dialogBox.GetComponent<DialogBox>().OpenDialogBox(trialsData.instructions.pause, "pause");
                 //dialogBox.GetComponent<DialogBox>().OpenDialogBox("string, "pause");
             }
             else
@@ -142,7 +175,6 @@ public class GameManager : MonoBehaviour
     public void EndSession()
     {
         Debug.Log("EndSession");
-        endTime = Time.time;
         sessionStarted = false;
         freezePlayer = true;
         dialogBox.GetComponent<DialogBox>().OpenDialogBox(trialsData.instructions.end, "session");
@@ -176,11 +208,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateClock()
     {
-        if (sessionStarted)
-            totalTime = TimeSpan.FromSeconds(Time.time - startTime);
-        else
-            totalTime = TimeSpan.FromMilliseconds(endTime - startTime);
-
+        totalTime = TimeSpan.FromSeconds(Time.time - startTime);
         if (sessionStarted && !freezePlayer)  //if session is ongoing
         {
             trialTime = TimeSpan.FromSeconds(Time.time - trialStartTime);
@@ -195,7 +223,7 @@ public class GameManager : MonoBehaviour
     {
         totalTimeTxt.text = "Total: " + totalTime.ToString(@"mm\:ss");
         trialTimeTxt.text = "Trial: " + trialTime.ToString(@"ss\:fff");
-        trialNbTxt.text = "COND " + condition + " - Trial " + trialNb + " / " + totalTrialNb;
+        trialNbTxt.text = "COND " + condition + " - Trial " + trialNb + " / " + totalTrialNb + demoUIText; ;
         if (sessionStarted && trialNb > 1)  //if session is ongoing
         {
             if (isAnswerCorrect)
@@ -214,7 +242,8 @@ public class GameManager : MonoBehaviour
         playerChoice = input;
         lastTrialTime = trialTime;
         CheckIfCorrect();
-        SaveData();
+        if (!demoTrials)
+            SaveData();
         EndTrial();
 
     }
@@ -236,7 +265,7 @@ public class GameManager : MonoBehaviour
 
     private void SaveData()
     {
-
+        Debug.Log("SaveData");
     }
 
 

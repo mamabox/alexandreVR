@@ -70,6 +70,7 @@ public class StimuliManager : MonoBehaviour
         }
         stimuliCount = allStimuli.Count;
         hintsCount = allHints.Count;
+        
     }
 
     private void ConfigureHints()

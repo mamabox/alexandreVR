@@ -1,25 +1,46 @@
 ﻿<Properties StartupConfiguration="{72E0A918-0F2E-A054-AF57-CED979314417}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TrialsData.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameManager.cs" Line="128" Column="103" IsPinned="True" />
+      <File FileName="Assets/Scripts/DialogBox.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/StimuliPrefab.cs" />
-      <File FileName="Assets/Scripts/StimulusPrefab.cs" />
-      <File FileName="Assets/Scripts/StimuliManager.cs" />
+      <File FileName="Assets/Scripts/StimulusPrefab.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/HintPrefab.cs" />
-      <File FileName="Assets/Scripts/DataImport.cs" />
-      <File FileName="Assets/Scripts/TrialsData.cs" />
-      <File FileName="Assets/Scripts/PlayerInputHandler.cs" />
-      <File FileName="Assets/Scripts/DialogBox.cs" />
-      <File FileName="Assets/Scripts/TrialSaveData.cs" />
-      <File FileName="Assets/Samples/XR Plugin Management/4.2.1/Example XR Management implementation/Editor/SampleSettingsEditor.cs" />
-      <File FileName="Assets/Data/Import/ImportTest.json" />
+      <File FileName="Assets/Scripts/PlayerInputHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/TrialSaveData.cs" Line="1" Column="1" />
+      <File FileName="Assets/Data/Import/ImportTest.json" Line="32" Column="11" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="110" Column="23" />
+      <File FileName="Assets/Scripts/StimuliManager.cs" Line="73" Column="9" NotebookId="1" />
+      <File FileName="Assets/Scripts/DataImport.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/TrialsData.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="alexandreVR" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Samples" expanded="True">
+                <Node name="XR Plugin Management" expanded="True">
+                  <Node name="4.2.1" expanded="True">
+                    <Node name="Example XR Management implementation" expanded="True">
+                      <Node name="Editor" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Scripts" expanded="True">
+                <Node name="TrialsData.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Unity.XR.Management.Samples PreferredExecutionTarget="1d713d63-0c1f-48ab-8f54-8909f3826e21" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Unity.XR.Management.Samples.Editor PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="10d0e794-1c04-46b2-bbb6-167e4f95e539" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="cc81c9ef-b398-478e-8c73-7ebdfe23debf" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
