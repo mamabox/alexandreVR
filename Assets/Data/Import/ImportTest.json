@@ -146,7 +146,7 @@
             "stimuli": [ "2_U_triangleR", "3_UR_squareR", "1_DR_diamondR", "3_D_squareG", "2_DL_diamondG", "2_UL_triangleG" ]
         },
         {
-            "condition": 1,
+            "condition": 3,
             "hintID": "3_D",
             "hintDuration": 1100,
             "stimuli": [ "3_U_diamondR", "1_UR_triangleG", "2_DR_triangleR", "2_D_triangleR", "1_UL_diamondG", "3_DL_squareG" ]

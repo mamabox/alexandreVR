@@ -56,7 +56,7 @@ public class DialogBox : MonoBehaviour
         {
             buttonText.text = "Recommencer";
         }
-        else if (dialogBoxMode == "trial" || dialogBoxMode == 'endDemo')
+        else if (dialogBoxMode == "trial" || dialogBoxMode == "endDemo")
         {
             buttonText.text = "Commencer";
         }
