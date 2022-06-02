@@ -247,10 +247,10 @@ public class GameManager : MonoBehaviour
         if (sessionStarted && trialNb > 1)  //if session is ongoing
         {
             if (isAnswerCorrect)
-                lastTrialTxt.text = "Trial " + (trialNb - 1) + delimiter + ": correct" + " - " + lastTrialTime.ToString(@"ss\:fff") + " (" + playerChoice + ")" + savingStatusText;
+                lastTrialTxt.text = "Trial " + (trialNb - 1) + ": correct" + " - " + lastTrialTime.ToString(@"ss\:fff") + " (" + playerChoice + ")" + savingStatusText;
             else
 
-                lastTrialTxt.text = "Trial " + (trialNb - 1) + delimiter + ": incorrect" + " - " + lastTrialTime.ToString(@"ss\:fff") + " (" + playerChoice + ")" + savingStatusText;
+                lastTrialTxt.text = "Trial " + (trialNb - 1) + ": incorrect" + " - " + lastTrialTime.ToString(@"ss\:fff") + " (" + playerChoice + ")" + savingStatusText;
         }
         else
             lastTrialTxt.text = "Last trial";
